@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router';
 
 const Home = () => {
     const navigate = useNavigate()
-    const {productsData}=useProducts()
-    const someProducts = productsData.slice(0,6)
+    const {products}=useProducts()
+    const someProducts = products.slice(0,6)
 
     return (
         <div>

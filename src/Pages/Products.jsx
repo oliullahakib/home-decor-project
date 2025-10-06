@@ -4,9 +4,9 @@ import ProductCard from '../components/ProductCard';
 
 const Products = () => {
     const [search, setSearch] = useState('')
-    const { productsData } = useProducts()
+    const { products } = useProducts()
     const term = search.trim().toLocaleLowerCase()
-    const searchProducts = productsData.filter(product=>product.name.toLocaleLowerCase().includes(term));
+    const searchProducts = products.filter(product=>product.name.toLocaleLowerCase().includes(term));
     return (
         <div>
             <div className='flex justify-between w-11/12 mx-auto mt-8 md:pr-8'>
