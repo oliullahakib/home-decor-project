@@ -6,14 +6,14 @@ const WishListCard = ({ product,handleDelete }) => {
     const { name, image, id, category,stock,price } = product
     
     return (
-        <div className="card bg-base-100 flex-row shadow-sm p-5 mt-3">
+        <div className="card bg-base-100 flex-col sm:flex-row shadow-sm p-5 mt-3">
             <figure>
                 <img
-                    className='rounded-xl w-20'
+                    className='rounded-xl sm:w-20'
                     src={image}
                     alt={name} />
             </figure>
-            <div className="card-body flex-row justify-between">
+            <div className="card-body sm:flex-row justify-between">
                 <div>
                     <h2 className=" text-2xl">{name}</h2>
                     <div className='flex items-center gap-3 mt-3'>
@@ -22,7 +22,7 @@ const WishListCard = ({ product,handleDelete }) => {
                     </div>
                     <p className='text-lg'><span className='font-bold '>Price</span>: ${price}</p>
                 </div>
-                <div className="card-actions justify-end">
+                <div className="card-actions  justify-end">
                     <button onClick={() => navigate(`/details/${id}`)} className="btn btn-primary">Details</button>
                     <button onClick={() => handleDelete(id)} className="btn btn-error text-white">Delete</button>
                 </div>

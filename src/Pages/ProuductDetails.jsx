@@ -19,7 +19,7 @@ const ProuductDetails = () => {
             <div className="hero-content flex-col lg:flex-row">
                 <img
                     src={image}
-                    className="max-w-sm rounded-lg shadow-2xl"
+                    className=" rounded-lg shadow-2xl "
                 />
                 <div>
                     <h1 className="text-5xl font-bold">{name}</h1>
