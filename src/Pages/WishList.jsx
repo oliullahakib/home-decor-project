@@ -47,6 +47,14 @@ const WishList = () => {
 
     }
 
+    // prosesing data for chart
+
+    const totalByCategory = {}
+    wishlist.forEach(product=>{
+        const category = product.category
+        totalByCategory[category]= (totalByCategory[category] || 0) + product.price
+    })
+    const data = Object.keys(totalByCategory).map(category=>({category,totalPrice:totalByCategory[category]}))
     return (
         <div className='w-11/12 mx-auto mt-4 '>
             <div>
@@ -61,7 +69,16 @@ const WishList = () => {
                 wishlist.length === 0 ? <p className='flex text-3xl justify-center items-center col-span-3 font-semibold text-red-400 my-5'>Wish List is Empty !</p> : wishlist.map(product => <WishListCard key={product.id} product={product} handleDelete={handleDelete} />)
             }
 
-            
+            <div className='my-8'>
+                <BarChart width={700} height={600} data={data} >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="category" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey={"totalPrice"} fill='green' />
+                </BarChart>
+            </div>
         </div>
     );
 };
