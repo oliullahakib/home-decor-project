@@ -1,6 +1,8 @@
 import React from 'react';
 import useProducts from '../Hooks/useProducts';
 import { useParams } from 'react-router';
+import { addToLS } from '../LDB/LDB';
+
 
 const ProuductDetails = () => {
     const { id } = useParams()
@@ -8,6 +10,10 @@ const ProuductDetails = () => {
     const product = products.find(p => p.id === Number(id))
     if(loading) return <p>lodding...</p>
     const{name,description,image,price,material,dimensions,category,stock} =product
+    const handleWishList =(id)=>{
+        addToLS(id)
+        
+    }
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
@@ -27,7 +33,7 @@ const ProuductDetails = () => {
                         <p ><span className='font-bold'>Category:</span>{category}</p>
                         <p className={`font-bold w-36 py-2 text-center rounded-2xl mt-3 ${stock?"bg-green-200":"bg-red-300"}`}>Stock {stock?"Available":"Out"}</p>
                     </div>
-                    <button className="btn btn-secondary">Add To WishList</button>
+                    <button onClick={()=>handleWishList(id)} className="btn btn-secondary">Add To WishList</button>
                 </div>
             </div>
         </div>
