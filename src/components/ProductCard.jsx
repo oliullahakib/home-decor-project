@@ -20,7 +20,7 @@ const ProductCard = ({product}) => {
                     <p className={`font-bold w-36 py-2 text-center rounded-2xl mt-3 ${stock?"bg-green-200":"bg-red-300"}`}>Stock {stock?"Available":"Out"}</p>
                 </div>
                 <div className="card-actions justify-end">
-                    <button onClick={()=> navigate(`details/${id}`)} className="btn btn-primary">Details</button>
+                    <button onClick={()=> navigate(`/details/${id}`)} className="btn btn-primary">Details</button>
                 </div>
             </div>
         </div>

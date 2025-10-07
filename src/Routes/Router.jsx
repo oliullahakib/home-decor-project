@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
                 Component:WishList
             },
             {
-                path:"products/details/:id",
+                path:"/details/:id",
                 Component:ProuductDetails
 
             }
