@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import useProducts from '../Hooks/useProducts';
 import ProductCard from '../components/ProductCard';
-
 const Products = () => {
     const [search, setSearch] = useState('')
     const { products } = useProducts()
     const term = search.trim().toLocaleLowerCase()
-    const searchProducts = products.filter(product=>product.name.toLocaleLowerCase().includes(term));
+    const searchProducts = products.filter(product=>product.name.toLocaleLowerCase().includes(term)); 
     return (
         <div>
             <div className='flex justify-between w-11/12 mx-auto mt-8 md:pr-8'>
@@ -29,7 +28,7 @@ const Products = () => {
                 </label>
                 </div>
             </div>
-
+ 
             <div className='w-11/12 mx-auto mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                   searchProducts.length===0?<p className='flex text-3xl justify-center items-center col-span-3 font-semibold text-red-400 my-5'>No Match Found !</p>:searchProducts.map(product => <ProductCard key={product.id} product={product} />)
