@@ -2,7 +2,13 @@ import React from 'react';
 import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
-
+    const links = <>
+        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/products"}>Products</NavLink>
+        <NavLink to={"/wishlist"}>WishList</NavLink>
+        <Link className='btn btn-primary' to={"/logIn"}>Log In</Link>
+        <Link className='btn btn-success text-white' to={"/register"}>Register</Link>
+    </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="navbar-start">
@@ -13,20 +19,18 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 gap-3 shadow">
-                        <NavLink to={"/"}>Home</NavLink>
-                        <NavLink to={"/products"}>Products</NavLink>
-                        <NavLink to={"/wishlist"}>WishList</NavLink>
-                        <Link className="btn " to={"/"} >Visit Shop</Link>
+                       {
+                        links
+                       }
                     </ul>
                 </div>
                 <Link to={"/"} className=" text-xl">HomeDcor</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal items-center gap-4 px-1">
-                    <NavLink to={"/"}>Home</NavLink>
-                    <NavLink to={"/products"}>Products</NavLink>
-                    <NavLink to={"/wishlist"}>WishList</NavLink>
-                    <Link className="btn " to={"/"} >Visit Shop</Link>
+                    {
+                        links
+                    }
                 </ul>
             </div>
 

@@ -69,7 +69,8 @@ const WishList = () => {
                 wishlist.length === 0 ? <p className='flex text-3xl justify-center items-center col-span-3 font-semibold text-red-400 my-5'>Wish List is Empty !</p> : wishlist.map(product => <WishListCard key={product.id} product={product} handleDelete={handleDelete} />)
             }
 
-            <div className='my-8 hidden md:block'>
+            {
+                wishlist.length ===0 || <div className={`my-8 hidden md:block`}>
                 <BarChart width={700} height={600} data={data} >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="category" />
@@ -79,6 +80,7 @@ const WishList = () => {
                     <Bar dataKey={"totalPrice"} fill='green' />
                 </BarChart>
             </div>
+            }
         </div>
     );
 };
