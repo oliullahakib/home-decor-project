@@ -52,8 +52,6 @@ const Register = () => {
                                         }
                                     </span>
                                 </div>
-
-                                <div><a className="link link-hover">Forgot password?</a></div>
                                 {/* term & conditions */}
                                 <fieldset className="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4">
                                     <legend className="fieldset-legend">Terms & Conditions</legend>
